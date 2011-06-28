@@ -31,10 +31,10 @@
     </licenses>
 
     <scm>
-        <connection>scm:svn:https://src.springframework.org/svn/se-security/trunk/</connection>
-        <developerConnection>scm:svn:https://src.springframework.org/svn/se-security/trunk/spring-security-saml
+        <connection>scm:git@git.springsource.org:~sannies/spring-security/sannies-se-security.git</connection>
+        <developerConnection>scm:git@git.springsource.org:~sannies/spring-security/sannies-se-security.git
         </developerConnection>
-        <url>https://src.springframework.org/svn/se-security/trunk/spring-security-saml</url>
+        <url>http://git.springsource.org/~sannies/spring-security/sannies-se-security</url>
     </scm>
 
     <developers>
@@ -65,14 +65,12 @@
 
     <distributionManagement>
         <repository>
-            <id>spring-milestone</id>
-            <name>Spring Milestone Repository</name>
-            <url>s3://maven.springframework.org/milestone</url>
+            <id>releases</id>
+            <url>http://build.strato.castlabs.com/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
-            <id>spring-snapshot</id>
-            <name>Spring Snapshot Repository</name>
-            <url>s3://maven.springframework.org/snapshot</url>
+            <id>snapshots</id>
+            <url>http://build.strato.castlabs.com/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
         <site>
             <id>local</id>
@@ -148,34 +146,34 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.1.2</version>
                 <executions>
-                  <execution>
-                    <goals>
-                       <goal>jar</goal>
-                    </goals>
-                  </execution>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
-<plugin>  
- <groupId>com.agilejava.docbkx</groupId>  
- <artifactId>docbkx-maven-plugin</artifactId>  
- <dependencies>  
-  <dependency>  
-   <groupId>org.docbook</groupId>  
-   <artifactId>docbook-xml</artifactId>  
-   <version>4.4</version>  
-   <scope>runtime</scope>  
-  </dependency>  
- </dependencies>
- <executions>  
-  <execution>  
-   <phase>pre-site</phase>  
-   <goals>  
-    <goal>generate-html</goal>
-    <goal>generate-pdf</goal>  
-   </goals>  
-  </execution>  
- </executions>  
-  </plugin>              
+            <plugin>
+                <groupId>com.agilejava.docbkx</groupId>
+                <artifactId>docbkx-maven-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.docbook</groupId>
+                        <artifactId>docbook-xml</artifactId>
+                        <version>4.4</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>generate-html</goal>
+                            <goal>generate-pdf</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
